@@ -5,9 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Page from './Componets/Page';
 import "bootstrap/dist/css/bootstrap.css";
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import CreateRecord from './Componets/new-record/create-record';
 
 ReactDOM.render(
-  <Page></Page>,
+  <BrowserRouter>
+    <Switch>
+      <Route path='/' render={() => <Page/>} exact></Route>
+      <Route path='/post' render={() => <CreateRecord/>} exact></Route>
+      <Route path='/get' exact></Route>
+    </Switch>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
