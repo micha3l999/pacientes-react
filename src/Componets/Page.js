@@ -66,7 +66,7 @@ class Page extends React.Component {
                     </div>
                 </div>
                 <div align="center">
-                    <button class="btn btn-outline-light" onClick={this.handlerClick} type="button">Env</button>
+                    <button class="btn" style={{ "border" : "solid 1px", "width" : "70px"}} onClick={this.handlerClick} type="button">Env</button>
                 </div>
             </div>
         )
@@ -78,31 +78,31 @@ class Page extends React.Component {
         var s;
         let sintomas = [];
         let symptoms = [];
-        if (this.state.ap.s1.length != 0) {
+        if (this.state.ap.s1 !== "") {
             symptoms.push(this.state.ap.s1);
         }
-        if (this.state.ap.s2.length != 0) {
+        if (this.state.ap.s2 !== "") {
             symptoms.push(this.state.ap.s2);
         }
-        if (this.state.ap.s3.length != 0) {
+        if (this.state.ap.s3 !== "") {
             symptoms.push(this.state.ap.s3);
         }
-        if (this.state.ap.s4.length != 0) {
+        if (this.state.ap.s4 !== "") {
             symptoms.push(this.state.ap.s4);
         }
-        if (this.state.ap.s5.length != 0) {
+        if (this.state.ap.s5 !== "") {
             symptoms.push(this.state.ap.s5);
         }
-        if (this.state.ap.s6.length != 0) {
+        if (this.state.ap.s6 !== "") {
             symptoms.push(this.state.ap.s6);
         }
-        if (this.state.ap.s7.length != 0) {
+        if (this.state.ap.s7 !== "") {
             symptoms.push(this.state.ap.s7);
         }
-        if (this.state.ap.s8.length != 0) {
+        if (this.state.ap.s8 !== "") {
             symptoms.push(this.state.ap.s8);
         }
-        if (this.state.ap.s9.length != 0) {
+        if (this.state.ap.s9 !== "") {
             symptoms.push(this.state.ap.s9);
         }
 
@@ -114,7 +114,7 @@ class Page extends React.Component {
         console.log("Medicna:" + amedi + "   Aedi:" + medicinaes + "    Sintomas:  " + symptoms);
         const requestOptions = {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json", "X-PINGOTHER": "pingpong" },
 
             body: JSON.stringify({
                 name: this.state.ap.name,
@@ -133,7 +133,7 @@ class Page extends React.Component {
             }),
         };
         const response = await fetch(
-            "http://127.0.0.1:3005/patient/",
+            "http://localhost:3005/patient/",
             requestOptions
         )
         const data = await response.json();
