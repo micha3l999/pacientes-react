@@ -5,9 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Page from './Componets/Page';
 import "bootstrap/dist/css/bootstrap.css";
-
+import PageRoutes from './Componets/PageRoutes';
 ReactDOM.render(
-  <Page></Page>,
+ <PageRoutes> </PageRoutes>,
   document.getElementById('root')
 );
 
