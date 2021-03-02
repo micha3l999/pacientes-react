@@ -7,6 +7,8 @@ import Page from './Componets/Page';
 import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CreateRecord from './Componets/new-record/create-record';
+import './App.css';
+
 
 ReactDOM.render(
   <BrowserRouter>
