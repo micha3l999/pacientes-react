@@ -20,7 +20,16 @@ class PageRoutes extends React.Component {
     state = {
       ap:{
         el_select:"",
-      }        }
+      },
+      data:{
+        records:{
+            patient:"",
+            symptoms:"",
+            _id:"",
+        }
+      }
+
+    }
       
 
      handlerChange = (e) => {
@@ -67,7 +76,7 @@ class PageRoutes extends React.Component {
                         <br></br>
                         <p></p>
                         <div  align="center">
-                            <button  borderRadius="10" borderWidth="10" className="btn btn-success" width="250px" onClick={this.handlerClick} type="button">Buscar  historial medico  del paciente selecionado</button>
+                            <button   className="btn btn-success" width="250px" onClick={this.handlerClick} type="button">Buscar  historial medico  del paciente selecionado</button>
 
                         </div>
                     </div>
@@ -91,6 +100,7 @@ class PageRoutes extends React.Component {
         e.preventDefault();
         name=this.state.ap.el_select;
         this.fetchCharacters();
+        
     }
 }
 export default PageRoutes;
