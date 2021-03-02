@@ -44,7 +44,7 @@ class List extends React.Component {
         return (
 
             <select id="el_select" name="el_select"onChange={this.props.onChange}>
-                <option value=""> hola</option>
+               <option>Elija el paciente</option>
                 {this.state.data.patients.map((item) => {
                   
                 return<option value={item._id} onChange={this.props.onChange} > {item.name +" "+  item.lastName}</option>

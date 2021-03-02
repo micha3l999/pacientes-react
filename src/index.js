@@ -4,18 +4,23 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Page from './Componets/Page';
+import PageRoutes from './Componets/PageRoutes';
+
 import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CreateRecord from './Componets/new-record/create-record';
 import './App.css';
 
+import PageDeleteP from './Componets/PageDeleteP';
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path='/' render={() => <Page/>} exact></Route>
       <Route path='/post' render={() => <CreateRecord/>} exact></Route>
-      <Route path='/get' exact></Route>
+      <Route path='/get' render={() => <PageRoutes/>} exact></Route>
+      <Route path='/delete' render={() => <PageDeleteP/>} exact></Route>
+
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')
