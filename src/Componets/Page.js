@@ -4,6 +4,7 @@ import Form from "./Form";
 import "bootstrap/dist/css/bootstrap.css";
 import Check from "./Check";
 import List from "./List";
+
 class Page extends React.Component {
 
     constructor(props) {
@@ -53,7 +54,7 @@ class Page extends React.Component {
             <h1 align="center"> Registro de pacientes </h1>
 
                 <div className="row">
-                    <div className="col-9">
+                    <div className="col-7 container center">
                         <h2 align="center"> Datos personales</h2>
                         <Form onChange={this.handlerChange}></Form>
 
@@ -61,7 +62,7 @@ class Page extends React.Component {
 
                     <div className="col-3">
 
-                    <h2 align="center"> Sintomas</h2>
+                    <h2> Sintomas</h2>
                     <Check onChange={this.handlerChange}>
 
                     </Check>
@@ -69,7 +70,9 @@ class Page extends React.Component {
                     </div>
                 </div>
                 <div align="center">
-                    <button class="btn" style={{ "border" : "solid 1px", "width" : "70px"}} onClick={this.handlerClick} type="button">Env</button>
+                    <br></br>
+                    <button class="btn" style={{ "border" : "solid 1px", "width" : "90px"}} onClick={this.handlerClick} type="button">Enviar</button>
+                    <br></br><br></br><br></br>
                 </div>
             </div>
         )

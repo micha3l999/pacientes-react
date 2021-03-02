@@ -10,7 +10,7 @@ class Form extends React.Component {
     };
     render() {
         return (
-            <div>
+            <div style={{"width" : "50rem"}}>
 
                 <div className="form-floating mb-3">
                     <label htmlfor="exampleInputPassword1">Nombre</label>
