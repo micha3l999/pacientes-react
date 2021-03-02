@@ -2,10 +2,10 @@ import React from "react";
 import ReactDom from "react-dom";
 import { Dropdown } from "react-bootstrap";
 class List extends React.Component {
-    handlerChange =(i)=>{
-        console.log(i.target.name);
+    handlerChange =(e)=>{
+        console.log(e.target.name);
         this.setState({
-        [i.target.name]: i.target.value,
+        [e.target.name]: e.target.value,
     });
     };
     constructor(props) {
@@ -43,13 +43,15 @@ class List extends React.Component {
     render() {
         return (
 
-            <select>
+            <select id="el_select" name="el_select"onChange={this.props.onChange}>
+                <option value=""> hola</option>
                 {this.state.data.patients.map((item) => {
                   
-                return<option id="paciente" name="paciente" value={item._id} onChange={this.props.onChange} > {item.name +" "+  item.lastName}</option>
+                return<option value={item._id} onChange={this.props.onChange} > {item.name +" "+  item.lastName}</option>
                 })}
+                <br></br>
             </select>
-            /*<div>
+           /* <div>
  
            
              <Dropdown>
@@ -59,7 +61,7 @@ class List extends React.Component {
  
                  <Dropdown.Menu>
                 {this.state.data.patients.map((item) => {
-                    <Dropdown.Item title={item.name}>{item.name }</Dropdown.Item>
+                    return  <Dropdown.Item id="abcd" name="abcd" value="56789123" onChange={this.props.onChange} title={item.name}>{item.name }</Dropdown.Item>
 
                 })} 
  

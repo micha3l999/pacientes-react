@@ -3,6 +3,7 @@ import ReactDom from "react-dom";
 import Form from "./Form";
 import "bootstrap/dist/css/bootstrap.css";
 import Check from "./Check";
+import List from "./List";
 class Page extends React.Component {
 
     constructor(props) {
@@ -29,6 +30,7 @@ class Page extends React.Component {
             s7: "",
             s8: "",
             s9: "",
+          
 
         },
     }
@@ -63,6 +65,7 @@ class Page extends React.Component {
                     <Check onChange={this.handlerChange}>
 
                     </Check>
+                    
                     </div>
                 </div>
                 <div align="center">
