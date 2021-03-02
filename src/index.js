@@ -8,20 +8,19 @@ import PageRoutes from './Componets/PageRoutes';
 
 import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import CreateRecord from './Componets/new-record/create-record';
+import CreateRecord from './Componets/create-record';
 import './App.css';
 
 import PageDeleteP from './Componets/PageDeleteP';
+import Navbar from './Componets/Navbar';
 
 ReactDOM.render(
   <BrowserRouter>
-    <Switch>
-      <Route path='/' render={() => <Page/>} exact></Route>
-      <Route path='/post' render={() => <CreateRecord/>} exact></Route>
-      <Route path='/get' render={() => <PageRoutes/>} exact></Route>
-      <Route path='/delete' render={() => <PageDeleteP/>} exact></Route>
-
-    </Switch>
+    <Navbar></Navbar>
+    <Route path='/' render={() => <Page/>} exact></Route>
+    <Route path='/post' render={() => <CreateRecord/>} exact></Route>
+    <Route path='/get' render={() => <PageRoutes/>} exact></Route>
+    <Route path='/delete' render={() => <PageDeleteP/>} exact></Route>
   </BrowserRouter>,
   document.getElementById('root')
 );

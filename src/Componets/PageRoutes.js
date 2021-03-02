@@ -2,6 +2,8 @@ import React from "react";
 import ReactDom from "react-dom";
 import Card from "./Card";
 import List from "./List";
+import Fotito from "../logo.svg";
+
 
 var name;
 name="";
@@ -70,17 +72,25 @@ class PageRoutes extends React.Component {
         
         return (
             <div className="Container">
+                <h2 align="center">Consulta de historiales médicos</h2>
                 <div className="row">
-                    <div className="col-6">
+                    <div className="col-6" align="center">
+                        <br></br>
                         <List onChange={this.handlerChange} ></List>
                         <br></br>
                         <p></p>
-                        <div  align="center">
+                        <div>
                             <button   className="btn btn-success" width="250px" onClick={this.handlerClick} type="button">Buscar  historial medico  del paciente selecionado</button>
+
+                        </div>
+                        <br></br><br></br><br></br>
+                        <div>
+                          <img src={Fotito} className="App-logo" alt="logo" />
 
                         </div>
                     </div>
                     <div className="col-6">
+                        <br></br>
                         {this.state.data.records.map((item) => {
                             return <Card Paciente={item.patient} Sintomas={item.symptoms + ""} Serial={item._id}></Card>
                         })}
